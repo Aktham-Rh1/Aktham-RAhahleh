@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>شركة اكثم الرحاحلة للتنظيفات العامه</title>
+  <style>
+    body {
+      font-family: "Tahoma", sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      direction: rtl;
+    }
+    header {
+      background-color: #2e8b57;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+    }
+    nav {
+      background-color: #1c5c3c;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .hero {
+      background-color: #e0f7fa;
+      padding: 40px;
+      text-align: center;
+    }
+    .hero h2 {
+      color: #2e8b57;
+    }
+    .services {
+      display: flex;
+      justify-content: space-around;
+      padding: 20px;
+      flex-wrap: wrap;
+    }
+    .service {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      width: 30%;
+      margin: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    footer {
+      background-color: #2e8b57;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+    .hidden { display: none; }
+    .login-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: #ffffff;
+      color: #2e8b57;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .ar1 {
+      position: absolute;
+      top: 60px;
+      left: 20px;
+      background-color: #ffffff;
+      color: #2e8b57;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .login-btn:hover, .ar1:hover {
+      background-color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>شركة اكثم الرحاحلة للتنظيفات العامه</h1>
+    <p>نظافة تامة وخدمة مميزة</p>
+    <button class="login-btn" onclick="window.location.href='login.html'">تسجيل الدخول</button>
+    <button class="ar1" onclick="window.location.href='ar.html'">ادخال قراءات</button>
+  </header>
+  <nav>
+    <a onclick="showSection('home')">الرئيسية</a>
+    <a onclick="showSection('services')">خدماتنا</a>
+    <a href="#">من نحن</a>
+    <a onclick="showSection('contact')">اتصل بنا</a>
+  </nav>
+  <!-- القسم الرئيسي -->
+  <section id="home" class="hero">
+    <h2>مرحباً بكم في شركتنا</h2>
+    <p>نحن نقدم أفضل خدمات التنظيف للمنازل والمكاتب بأعلى جودة وأقل تكلفة.</p>
+    <button onclick="showSection('services')">احجز الآن</button>
+    <section class="services">
+      <div class="service">
+        <h3>تنظيف المنازل</h3>
+        <p>خدمة شاملة لتنظيف غرف النوم، المطابخ، والحمامات.</p>
+      </div>
+      <div class="service">
+        <h3>تنظيف المكاتب</h3>
+        <p>نظافة يومية أو أسبوعية لمكاتبكم للحفاظ على بيئة عمل صحية.</p>
+      </div>
+      <div class="service">
+        <h3>تنظيف السجاد</h3>
+        <p>تقنيات حديثة لإزالة البقع والروائح من السجاد والموكيت.</p>
+      </div>
+    </section>
+  </section>
+  <!-- قسم الخدمات -->
+  <section id="services" class="services hidden">
+    <div class="service">
+      <h3>تنظيف المنازل</h3>
+      <p>اشتراك شهري: 50 دينار</p>
+      <p>اشتراك سنوي: 500 دينار</p>
+    </div>
+    <div class="service">
+      <h3>تنظيف المكاتب</h3>
+      <p>اشتراك شهري: 70 دينار</p>
+      <p>اشتراك سنوي: 700 دينار</p>
+    </div>
+    <div class="service">
+      <h3>تنظيف السجاد</h3>
+      <p>اشتراك شهري: 40 دينار</p>
+      <p>اشتراك سنوي: 400 دينار</p>
+    </div>
+  </section>
+  <!-- قسم اتصل بنا -->
+  <section id="contact" class="hidden hero" style="text-align: right;">
+    <h2>اتصل بنا</h2>
+    <p>📞 الهاتف: 0791881905</p>
+    <p>✉️ البريد الإلكتروني: aktham121232@gmail.com</p>
+    <p>📍 العنوان: إربد - الأردن</p>
+    <p>صفحاتنا على مواقع التواصل الاجتماعي</p>
+    <a href="https://www.linkedin.com/in/aktham-rahahleh-6b9641311" target="_blank">
+      <img src="c:\مشروع 1\شعار لينكد ان.webp" width="50" height="50">
+    </a>
+    <a href="https://wa.me/qr/FTTTISEMH4ZPK1" target="_blank">
+      <img src="c:\مشروع 1\شعار واتس اب.png" width="50" height="50">
+    </a>
+    <a href="https://www.facebook.com/share/1Aj5fXiV1W/" target="_blank">
+      <img src="c:\مشروع 1\شعار فيس بوك.png" width="50" height="50">
+    </a>
+    <a href="https://www.snapchat.com/add/aktham_rahahleh" target="_blank">
+      <img src="c:\مشروع 1\شعار سناب شات.png" width="50" height="50">
+    </a>
+    <a href="https://www.instagram.com/akthamalrahahleh22" target="_blank">
+      <img src="c:\مشروع 1\شعار انستا.webp" width="50" height="50">
+    </a>
+  </section>
+  <footer>
+    <p>جميع الحقوق محفوظة © 2026 شركة اكثم الرحاحلة للتنظيفات العامه</p>
+    <p>الهاتف: 0791881905 | البريد الإلكتروني: aktham121232@gmail.com</p>
+  </footer>
+  <script>
+    function showSection(sectionId) {
+      document.getElementById("home").classList.add("hidden");
+      document.getElementById("services").classList.add("hidden");
+      document.getElementById("contact").classList.add("hidden");
+      document.getElementById(sectionId).classList.remove("hidden");
+    }
+  </script>
+</body>
+</html>
